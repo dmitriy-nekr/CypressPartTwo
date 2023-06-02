@@ -1,0 +1,13 @@
+{
+    "title":"h1" ,
+    "day_navigation":".page-nav__day",
+    "movies":".movie",
+    "movie_title":".movie__title",
+    "login":".login__input",
+    "auth_button":".login__button",
+    "body":"body",
+    "subtitle":".page-header__subtitle",
+    "seat1":".buying-scheme__wrapper > :nth-child(5) > :nth-child(6)",
+    "seat2":".buying-scheme__wrapper > :nth-child(5) > :nth-child(5)",
+    "accept_button":".acceptin-button"
+}
