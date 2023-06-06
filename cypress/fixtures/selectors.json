@@ -9,5 +9,6 @@
     "subtitle":".page-header__subtitle",
     "seat1":".buying-scheme__wrapper > :nth-child(5) > :nth-child(6)",
     "seat2":".buying-scheme__wrapper > :nth-child(5) > :nth-child(5)",
-    "accept_button":".acceptin-button"
+    "accept_button":".acceptin-button",
+    "terminator_title":"[data-film-id='99'] > .conf-step__movie-title"
 }

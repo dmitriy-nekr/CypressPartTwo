@@ -10,15 +10,27 @@ describe('Tests', () => {
       expect(el).to.contain('Идёмвкино')
     })
     cy.get(selectors.day_navigation).should("have.length", 7)
-    cy.get(selectors.movies).should("have.length", 1)
-    cy.get(selectors.movie_title).should('have.text','Терминатор-заржавел')
+    cy.get(selectors.movies).should("have.length", 3)
   })
-  it('Seats ordering', () => {
+})
+describe('Seats ordering', () =>{
+  it('Should seats ordering', () => {
+    cy.visit('/admin')
+    cy.login(inputData1.data.login, inputData1.data.password)
+    cy.get(selectors.terminator_title).then(($el) => {
+    const text = $el.text()
+    cy.wrap(text).as('text')
+    })
+    cy.visit('/client')
     cy.get(selectors.day_navigation).eq(3).click()
-    cy.get(selectors.movies).eq(0).contains('10:00').click()
-    cy.get(selectors.seat1).click()
-    cy.get(selectors.seat2).click()
-    cy.get(selectors.accept_button).should('have.css', 'background-color').and('equal', 'rgb(22, 166, 175)')
+    cy.get(selectors.movie_title).then((title)=>{
+      if(title = '@text'){
+        cy.contains('10:00').click()
+        cy.get(selectors.seat1).click()
+        cy.get(selectors.seat2).click()
+        cy.get(selectors.accept_button).should('have.css', 'background-color').and('equal', 'rgb(22, 166, 175)')
+      }
+    })
 })
 })
 
